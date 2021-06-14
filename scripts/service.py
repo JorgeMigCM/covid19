@@ -75,6 +75,7 @@ def default():
             	r = {"Diagnostico": ClassPred, "score": float(ClassProb)}
             	data["% Prediccion"].append(r)
 
+            	data["success"] = True
 
     return jsonify(data)
 
