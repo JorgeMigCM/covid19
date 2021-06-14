@@ -69,7 +69,7 @@ def default():
             	
 		# Resultados
             	prediction = 1 if (result >= 0.5) else 0
-            	CLASSES = ['Normal', 'Covid19+']
+            	CLASSES = ['Pulmones Normales', 'Covid19 positivo']
 
             	ClassPred = CLASSES[prediction]
             	ClassProb = result
