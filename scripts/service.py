@@ -72,8 +72,8 @@ def default():
 
             	#Results as Json
             	data["predictions"] = []
-            	r = {"Diagnostico": ClassPred, "score": float(ClassProb)}
-            	data["% Prediccion"].append(r)
+            	r = {"Diagnostico": ClassPred, "Porcentaje": float(ClassProb)}
+            	data["prediction"].append(r)
 
             	data["success"] = True
 
