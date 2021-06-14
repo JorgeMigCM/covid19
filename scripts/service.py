@@ -36,7 +36,7 @@ def allowed_file(filename):
 #Define a route
 @app.route('/')
 def main_page():
-	return '¡Servicio REST activo!'
+	return 'Servicios Activados'
 
 @app.route('/model/covid19/', methods=['GET','POST'])
 def default():
