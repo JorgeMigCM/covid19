@@ -1,36 +1,37 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO 8859-1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Clasificar Imagen</title>
+  <title>Covid-19</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
 <body ng-app="myApp" ng-cloak bgcolor="black" ng-controller="myCtrl" layout="column">
   <md-toolbar>
-    <div class="md-toolbar-tools">
-      <span>Clasificar Imagen</span>
+    <div class="md-toolbar-tools" style="background-color: rgb(79, 156, 245);">
+      <span style="align-items: center; text-align: center;">Diagnosticador de Covid-19</span>
     </div>
   </md-toolbar>
-
   <form name="myForm">
     <md-card style="margin-bottom:0px">
-      <md-card-content>
-        <div style="margin-bottom:16px" layout="column" layout-align="center">
-          <span style="font-weight:bold;font-size:13">Imagen:</span>
-          <input type="file" name="file" ng-model="cn" class="form-control" onchange="loadFile(event)" accept=".jpg,.jpeg,.png" style="font-size:13">
+      <md-card-content class="icon-upload">
+        <div style="margin-bottom:20px" layout="column" layout-align="center" id="foto">
+          <span><i class="fas fa-cloud-upload-alt icon"></i></span>
+          <input type="file" name="file" id="foto-d" ng-model="cn" class="form-control" onchange="loadFile(event)" accept=".jpg,.jpeg,.png">
         </div>
 
         <div  layout="column" layout-align="space-between center">
-          <img id="imagen" class="img-responsive"/>
+          <img id="imagen" class="img-responsive" width="500px"/>
         </div>
       </md-card-content>
 
       <md-card-actions layout="row" layout-align="end center">
-        <md-button ng-click="submit()" class="md-accent md-raised">Clasificar</md-button>
+        <md-button ng-click="submit()" class="md-raised md-primary" style="background-color: rgb(79, 156, 245);">Analizar</md-button>
       </md-card-actions>
     </md-card>
     </form>
@@ -39,10 +40,10 @@
       <md-card-content>
         <div id="resultadosdiv" >
             <div ng-show="success">
-                  <span style="color:blue;font-weight:bold">{: predictions[0].label :}</span>   <span style="color:blue">(score: {: predictions[0].score :})</span>
+                  <span style="font-weight:bold">{: predictions[0].label :}</span>   <span>Probalidad: {: predictions[0].score :}</span>
             </div>
             <div ng-show="error">
-                  <span style="color:red;font-weight:bold">Error!</span>
+                  <span style="font-weight:bold">¡Consulta no realizada!</span>
             </div>
             <div ng-show="loading">
               <img src="https://images2.tcdn.com.br/commerce/assets/store/img//loading.gif" alt="Procesando" "">
