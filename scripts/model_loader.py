@@ -1,8 +1,4 @@
-# Developed by Mirko J. Rodríguez mirko.rodriguezm@gmail.com
 
-# ------------------------
-# Cargando modelo de disco
-# ------------------------
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 
